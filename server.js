@@ -116,7 +116,9 @@ app.get("/scrape", function(req, res) {
         }
         // Or log the doc
         // data from server to front end
-        else {res.json(doc)};
+        // i cut ln 119 
+        else {
+          console.log(doc)};
         
       });
 
@@ -149,20 +151,20 @@ app.get("/articles/:id", function(req, res) {
 
     // when we interact w/ the model, we interact w/ the indiv one
     // so we say 
-  Article.find({"_id": req.params.id})
+  Article.findOne({"_id": req.params.id})
     // findOne bc we just want to get one
     // get the article by the article id
     // which we get by the 
     // article will store id to the note, not the note itself
 
-// so if we see a ref to note with obj id will pull data and return it
+// so if we see a ref to note with obj, id will pull data and return it
 .populate("note")
-.exec(function(err, doc){
-    if (err){
-       res.send(err);
+.exec(function(error, doc){
+    if (error){
+       console.log(error);
     }
 else{
-    res.send(doc);
+    res.json(doc);
 }
 })
 
@@ -218,7 +220,7 @@ newNote.save(function(err, data)  {
 })
 });
 
-// Listen on port 3000
-app.listen(3000, function() {
-  console.log("App running on port 3000!");
+// Listen on port 8080
+app.listen(8080, function() {
+  console.log("App running on port 8080!");
 });

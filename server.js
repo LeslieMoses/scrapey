@@ -79,6 +79,9 @@ Article.find({}, function(error, found) {
 
 
 // A GET request to scrape the echojs website
+
+// btn scrapes when clicked
+// $(document).on("click", "#scrapeArticle", function() {
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with request
   request("http://www.echojs.com/", function(error, response, html) {
@@ -86,6 +89,7 @@ app.get("/scrape", function(req, res) {
     // pass in the string of this website, which is, in this case, all the html
     // so all the html in the website is passed to Cheerio, 
     // Cheerio loads it 
+    
     var $ = cheerio.load(html);
       // it's passed to the dollar sign
     // Then, sort of a jQuery select, (but its a cheerio select)
@@ -101,7 +105,7 @@ app.get("/scrape", function(req, res) {
       // Add the text and href of every link ("a"), 
     //   save them as properties of the result object
     //  study these:
-      result.title = $(this).children("a").text();
+      result.title =$(this).children("a").text();
       result.link = $(this).children("a").attr("href");
 
       // Using our Article model, create a new entry

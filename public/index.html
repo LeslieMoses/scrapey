@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Scraping With Mongoose</title>
+    <title>Scraping via Mongoose</title>
     <style>
       body { background-color: navajowhite;
       background: url(walk.jpg) center;
@@ -12,7 +12,7 @@
         margin-left: auto;
         margin-right: auto;
         padding: 5%;
-        border: solid .3px darkslategray;
+        border: solid 15px white;
         border-radius: 30px;
         font-family: 'Merriweather', serif;
 
@@ -24,12 +24,27 @@
         height: 700px;
         background: white;
            padding: 5%;
+           font-family: 'Montserrat', sans-serif;
+           text-size: 30px;
       }
       #notes {
-        float: right;
+ 
         width: 30%;
            padding: 5%;
+             display: inline-block;
+           background: white;
+           padding: 5%;
+           font-family: 'Montserrat', sans-serif;
+           text-size: 30px;
       }
+
+      h1{
+        font-size: 120px;
+        /*border: black solid 1px;*/
+        text-align: right;
+        background: white;
+      }
+
       textarea, input {
         display: block;
         width: 100%;
@@ -47,13 +62,15 @@
     </style>
     <link rel="shortcut icon" href="">
     <!--Goog Font-->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat" rel="stylesheet">
   </head>
   <body>
     <div id="wrapper">
-      <h1 style="font-size: 60px;">Local News</h1>
-      <h2>AreaUpdate</h2>
-      <div id="articles">Articles</div>
+      <h1 ><span style="color:navajowhite">news</span>SCRAPE</h1> 
+           <!--<div><button type="submit" id="scrapeArticle">Scrape</button></div>-->
+      
+      <h2 style="font-family: Montserrat, sans-serif">EchoJS </h2>
+      <div id="articles"><strong>Articles</strong></div>
       <div id="notes">Notes</div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
